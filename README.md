@@ -37,6 +37,8 @@ Commands are turned into a reverse polish notation, passed through the eval call
 TODO
 ====
 
+```
 Add Tests
 Pass through the SHA1 version of the Lua script rather than the full script (saves network traffic to Redis)
 Node.js / NPM implementation
+```
