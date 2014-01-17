@@ -16,13 +16,13 @@ atomic_redis = require './atomic_redis'
 
 client = redis.connect('127.0.0.1', 6379)
 
-local user = atomic_redis(client, "user:tim@tim.com")
+local user = atomic_redis(client, "KEYNAME")
 
--- set up a todo_lists object on the key "user:tim@tim.com" from above
+-- set up a todo_lists object on the key "KEYNAME" from above
 
 user:set("todo_lists", {{name = "Work", items = {}}, {name = "Home", items = {}}})
 
--- set a key "password" to point to a value "hunter2" in the "user:tim@tim.com" key
+-- set a key "password" to point to a value "hunter2" in the "KEYNAME" key
 
 user:set("password","hunter2")
 
