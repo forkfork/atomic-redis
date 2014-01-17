@@ -3,7 +3,7 @@ atomic-redis
 
 Safely (in a multiprocess environment) and easily read and modify JSON structures in Redis keys. Normally if two processes read a JSON value, and both update different values within that JSON object, when they write back to the Redis they will destroy the others change (unless they provide locking). This library avoids that issue.
 
-This is achieved through the use of the EVAL command which will lock other evals for a very short time in order to apply the operation. In most cases this is easier (and faster) than manually locking on the relevant Redis key.
+This is achieved through passing through the changes as a diff rather than a full object update - EVAL is used for this. In most cases this is easier (and faster) than manually locking on the relevant Redis key.
 
 Currently this is implemented for Lua clients. However it will be trivial to extend this to Javascript and other languages as most of the logic is found in the EVAL script.
 
