@@ -16,6 +16,8 @@ atomic_redis = require './atomic_redis'
 
 client = redis.connect('127.0.0.1', 6379)
 
+local user = atomic_redis(client, "user:tim@tim.com")
+
 -- set up a todo_lists object on the key "user:tim@tim.com" from above
 
 user:set("todo_lists", {{name = "Work", items = {}}, {name = "Home", items = {}}})
