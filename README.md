@@ -1,7 +1,7 @@
 atomic-redis
 ============
 
-Atomic Operations on JSON Stuctures
+Safely (in a multiprocess environment) and easily read and modify JSON structures in Redis keys.
 
 Redis is a commonly used as a mini 'database' for caching, shared queues, and similar. It is generally fast & reliable for these tasks. Redis does not support nested data types.
 
