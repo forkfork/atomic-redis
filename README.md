@@ -10,6 +10,7 @@ Currently this is implemented for Lua clients. However it will be trivial to ext
 Example
 =======
 
+```
 redis = require 'redis'
 atomic_redis = require './atomic_redis'
 
@@ -26,6 +27,7 @@ user:set("password","hunter2")
 -- Delete the element in todo_lists array which matches a key "name" and value "Home"
 
 user("todo_lists"):match("name", "Home"):del()
+```
 
 How it works
 ============
